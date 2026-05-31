@@ -223,7 +223,7 @@ export default function HomePage() {
               <div key={product.id} className="bg-white dark:bg-surface-900 rounded-2xl overflow-hidden">
                 <Link href={`/products/${product.slug}`} className="block">
                   <div className="relative aspect-square bg-surface-50 dark:bg-surface-800">
-                    <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
+                    <Image src={product.images[0]} alt={product.name} fill className="object-contain p-2" />
                     {product.discount && (
                       <span className="absolute top-2 left-2 px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full">-{product.discount}%</span>
                     )}

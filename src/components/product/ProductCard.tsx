@@ -47,8 +47,8 @@ export default function ProductCard({ product, className, variant = 'default' }:
           className
         )}
       >
-        <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-50 dark:bg-surface-800">
-          <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
+        <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-white dark:bg-surface-800">
+          <Image src={product.images[0]} alt={product.name} fill sizes="96px" className="object-contain p-1.5" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-surface-900 dark:text-white line-clamp-2">{product.name}</p>
@@ -77,12 +77,13 @@ export default function ProductCard({ product, className, variant = 'default' }:
     >
       <div className="bg-white dark:bg-surface-900 rounded-2xl border border-surface-100 dark:border-surface-800 shadow-card overflow-hidden transition-all duration-300 group-hover:shadow-card-hover group-hover:border-purple-200 dark:group-hover:border-purple-800 group-hover:-translate-y-1">
         {/* Image */}
-        <div className="relative aspect-square bg-surface-50 dark:bg-surface-800 overflow-hidden">
+        <div className="relative aspect-square bg-white dark:bg-surface-800 overflow-hidden">
           <Image
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
           />
 
           {/* Badges */}
