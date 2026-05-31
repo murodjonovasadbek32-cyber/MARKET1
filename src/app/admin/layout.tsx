@@ -12,7 +12,19 @@ import {
 import { cn } from '@/lib/utils'
 import Avatar from '@/components/ui/Avatar'
 
-const NAV_GROUPS = [
+type NavItem = {
+  href: string
+  icon: React.ElementType
+  label: string
+  badge?: string | null
+}
+
+type NavGroup = {
+  label: string
+  items: NavItem[]
+}
+
+const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Asosiy',
     items: [
@@ -23,33 +35,33 @@ const NAV_GROUPS = [
   {
     label: 'Foydalanuvchilar',
     items: [
-      { href: '/admin/users',    icon: Users,   label: 'Xaridorlar',   badge: null },
-      { href: '/admin/sellers',  icon: Store,   label: 'Sotuvchilar',  badge: '12' },
+      { href: '/admin/users',    icon: Users,   label: 'Xaridorlar',    badge: null },
+      { href: '/admin/sellers',  icon: Store,   label: 'Sotuvchilar',   badge: '12' },
     ]
   },
   {
     label: 'Savdo',
     items: [
-      { href: '/admin/products',  icon: Package,    label: 'Mahsulotlar',  badge: '8' },
-      { href: '/admin/orders',    icon: ShoppingBag,label: 'Buyurtmalar',  badge: null },
-      { href: '/admin/coupons',   icon: Tag,        label: 'Kuponlar',     badge: null },
-      { href: '/admin/finance',   icon: Wallet,     label: 'Moliya',       badge: null },
+      { href: '/admin/products',  icon: Package,       label: 'Mahsulotlar',   badge: '8' },
+      { href: '/admin/orders',    icon: ShoppingBag,   label: 'Buyurtmalar',   badge: null },
+      { href: '/admin/coupons',   icon: Tag,           label: 'Kuponlar',      badge: null },
+      { href: '/admin/finance',   icon: Wallet,        label: 'Moliya',        badge: null },
     ]
   },
   {
     label: 'Kontent',
     items: [
-      { href: '/admin/banners',    icon: Image,      label: 'Bannerlar',    badge: null },
-      { href: '/admin/categories', icon: Database,   label: 'Kategoriyalar',badge: null },
-      { href: '/admin/reviews',    icon: MessageSquare, label: 'Sharhlar',  badge: '3' },
-      { href: '/admin/reports',    icon: Flag,       label: 'Shikoyatlar',  badge: '5' },
+      { href: '/admin/banners',    icon: Image,         label: 'Bannerlar',     badge: null },
+      { href: '/admin/categories', icon: Database,      label: 'Kategoriyalar', badge: null },
+      { href: '/admin/reviews',    icon: MessageSquare, label: 'Sharhlar',      badge: '3' },
+      { href: '/admin/reports',    icon: Flag,          label: 'Shikoyatlar',   badge: '5' },
     ]
   },
   {
     label: 'Tizim',
     items: [
-      { href: '/admin/logistics', icon: Truck,    label: 'Logistika',    badge: null },
-      { href: '/admin/settings',  icon: Settings, label: 'Sozlamalar',   badge: null },
+      { href: '/admin/logistics', icon: Truck,    label: 'Logistika',   badge: null },
+      { href: '/admin/settings',  icon: Settings, label: 'Sozlamalar',  badge: null },
     ]
   },
 ]
